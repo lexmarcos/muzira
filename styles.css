@@ -1,0 +1,370 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;0,900;1,400&display=swap");
+body {
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+  background: #0c0c0e;
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+.navbar {
+  background: #00ffa3;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 0px 50px;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+
+.content-musics-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 70px;
+  height: calc(100vh - 220px);
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logo-wrapper > span {
+  color: #000000;
+  margin-left: 10px;
+  font-weight: 700;
+}
+
+.logo {
+  background: #0c0c0e;
+  padding: 10px;
+  border-radius: 100px;
+  font-weight: 700;
+  color: #00ffa3;
+}
+
+.current-music {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.current-album-image {
+  background: url("./assets/album.png") center/cover;
+  width: 22vw;
+  height: 22vw;
+  border-radius: 38px;
+  z-index: 2;
+}
+
+.current-album-image-shadow {
+  background: url("./assets/album.png") center/cover;
+  width: 20vw;
+  height: 20vw;
+  border-radius: 38px;
+  filter: blur(20px);
+  opacity: 0.3;
+  z-index: 1;
+  margin-top: -19vw;
+}
+
+.music-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24px;
+  margin-top: 64px;
+  font-weight: 200;
+  color: #ffffff71;
+}
+
+.current-music-title {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.musics {
+  display: flex;
+  width: fit-content;
+  height: 100%;
+  background: #181818;
+  padding: 40px;
+  padding-top: 8vh;
+  box-shadow: -20px 0px 60px #000000;
+}
+
+.minimized-musics {
+  color: #fff;
+  padding-right: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.musics h1,
+.mobile-musics-list h1 {
+  color: #fff;
+  font-size: 72px;
+  margin: 0;
+  margin-bottom: 40px;
+}
+
+.mobile-musics-list h1 {
+  font-size: 42px;
+  margin-bottom: 0px;
+}
+
+.wrapper-action-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.close-mobile-musics-list-btn {
+  font-size: 28px;
+  color: #fff;
+}
+
+.table-musics-details .title,
+.table-musics-details .author {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 140px;
+  white-space: nowrap;
+}
+
+tbody::before {
+  content: "";
+  display: block;
+  height: 20px;
+}
+
+.musics th,
+.mobile-musics-list th {
+  border-bottom: solid 1px #ffffff2e;
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: 500;
+  padding-bottom: 10px;
+  text-align: left;
+  padding: 0px 20px;
+  padding-bottom: 10px;
+}
+
+.musics table,
+.mobile-musics-list table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.musics td,
+.mobile-musics-list td {
+  color: #fff;
+  padding: 10px 20px;
+}
+
+tr {
+  transition: background 0.3s;
+}
+
+.active-music {
+  background: #09243a;
+}
+
+tbody tr:hover {
+  background: #00ffa31f;
+  cursor: pointer;
+}
+
+td:first-child,
+th:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+td:last-child,
+th:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+.musics td > div,
+.mobile-musics-list td > div {
+  padding: 2px 0;
+}
+
+.minimized-musics {
+  display: none;
+}
+
+.album-image-table,
+.minimized-album-image {
+  background: url("./assets/album.png") center/cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.minimized-album-image {
+  width: 40px;
+  height: 40px;
+  margin: 10px 0px;
+}
+
+.wrapper-title-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer {
+  height: 150px;
+  width: 100%;
+  background: #131313;
+  border-top: 1px solid #ffffff1c;
+  z-index: 10;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.music-duration-bar,
+.inner-duration-bar {
+  height: 5px;
+  width: 25%;
+  border-radius: 100px;
+  background: #909090;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.music-duration-bar {
+  background: #4d4d4d;
+}
+
+.inner-duration-bar {
+  background: #909090;
+  width: 50%;
+  transition: background 0.4s;
+}
+
+.music-duration-bar:hover > .inner-duration-bar {
+  background: #00ffa3;
+}
+
+.wrapper-player-actions {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 20%;
+}
+
+.wrapper-player-actions span {
+  color: #909090;
+  font-size: 24pt;
+  user-select: none;
+  cursor: pointer;
+  border-radius: 100px;
+  padding: 10px;
+  transition: background 0.4s;
+}
+
+.wrapper-player-actions span:not(.play-button):hover {
+  background: rgba(255, 255, 255, 0.132);
+  color: #b9b9b9;
+}
+
+.play-button {
+  background: #00ffa3;
+  color: #000 !important;
+  user-select: none;
+}
+
+.mobile-musics-list {
+  width: 100%;
+  position: absolute;
+  background: #181818;
+  height: 80vh;
+  bottom: 0px;
+  z-index: 11;
+  padding: 30px;
+  border-radius: 20px 20px 0 0;
+  transform: translateY(100%);
+}
+
+@media only screen and (max-width: 1150px) {
+  .minimized-musics {
+    display: flex;
+  }
+  .musics {
+    position: absolute;
+    right: -425px;
+    transition: right 0.5s;
+  }
+  .current-album-image {
+    width: 30vw;
+    height: 30vw;
+    border-radius: 25px;
+  }
+  .current-album-image-shadow {
+    width: 28vw;
+    height: 28vw;
+    border-radius: 25px;
+    margin-top: -26vw;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .current-album-image {
+    width: 40vw;
+    height: 40vw;
+    border-radius: 20px;
+  }
+  .current-album-image-shadow {
+    width: 38vw;
+    height: 38vw;
+    border-radius: 20px;
+    margin-top: -36vw;
+  }
+  .music-duration-bar,
+  .wrapper-player-actions {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .current-album-image {
+    width: 60vw;
+    height: 60vw;
+    border-radius: 15px;
+  }
+  .current-album-image-shadow {
+    width: 50vw;
+    height: 50vw;
+    border-radius: 15px;
+    margin-top: -46vw;
+  }
+  .musics {
+    display: none;
+  }
+  .music-duration-bar,
+  .wrapper-player-actions {
+    width: 75%;
+  }
+}
